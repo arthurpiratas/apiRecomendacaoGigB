@@ -39,6 +39,7 @@ def recomendacaoDemo(localidades, generos, tipo_eventos):
         return bandas
 
     #print(retornaLista(linhas))
-    return retornaLista(linhas)
+    #return retornaLista(linhas)
+    return "retornaLista(linhas)"
 
 
