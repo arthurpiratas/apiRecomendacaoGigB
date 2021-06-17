@@ -7,8 +7,7 @@ def recomendacaoDemo(localidades, generos, tipo_eventos):
     tipo_evento = tipo_eventos
     ListaArtistas = []
 
-    df1=pd.read_csv('src\servico\Base-Artista-Gigb1 (1).csv')
-
+    
     return "show"
     
 
