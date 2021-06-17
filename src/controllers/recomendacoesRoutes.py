@@ -15,9 +15,6 @@ class recoDemo(Resource):
         localidade = request.args.get('localidade', default = 'nulo',  type = str)
         genero = request.args.get('genero', default = 'nulo', type = str) 
         tipo_evento = request.args.get('tipo_evento' , default = 'nulo', type = str)
-        #localidade = "Recife"
-        #genero = "jaz"
-        #tipo_evento = "Apresentação em Bar"
         if(localidade == 'nulo' or genero == 'nulo' or tipo_evento == 'nulo'):
             return 'bad request', 400
 
