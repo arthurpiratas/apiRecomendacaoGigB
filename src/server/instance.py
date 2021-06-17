@@ -14,7 +14,7 @@ class Server():
     def run(self, ):
         Port = int(os.environ.get("PORT", 5000))
         self.app.run(
-            debug=True, 
+            debug=False, 
             host='0.0.0.0', 
             port=Port
             #cancelar o debug qnd tiver em produção
