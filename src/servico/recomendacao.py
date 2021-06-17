@@ -35,12 +35,12 @@ def recomendacaoDemo(localidades, generos, tipo_eventos):
 
     def retornaLista(linhas):
         for (i,linhas) in baseFinal.head(10 if linhas[0] >= 10 else linhas[0]).iterrows():
-            objetoID = "{'ID' :" + str(linhas['ID']) + "}"
+            objetoID = {'ID' : + str(linhas['ID'])}
             ListaArtistas.append(objetoID)
         bandas = {"Bandas" : ListaArtistas}
         return bandas
 
-    #print(retornaLista(linhas))
+    
     return retornaLista(linhas)
     
 
