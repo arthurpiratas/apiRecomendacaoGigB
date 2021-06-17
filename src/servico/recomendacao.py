@@ -7,7 +7,7 @@ def recomendacaoDemo(localidades, generos, tipo_eventos):
     tipo_evento = tipo_eventos
     ListaArtistas = []
 
-    df1=pd.read_csv('src\servico\Base-Artista-Gigb1 (1).csv')
+    df1=pd.read_csv('src\servico\Base-Artista-Gigb1.csv', sep = ',', )
 
     mediaGeral = round(df1['notaMedia'].mean())
     baseAtivos = df1.copy().loc[df1['status'] == 'Ativo']
