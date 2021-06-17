@@ -12,10 +12,12 @@ from src.servico.recomendacao import recomendacaoDemo
 class recoDemo(Resource):
     def get(self, ):
         # http://localhost:5000/recoDemo?localidade=Recife&genero=jaz&tipo_evento=Apresentação em Bar
-        localidade = request.args.get('localidade', default = 'nulo',  type = str)
-        genero = request.args.get('genero', default = 'nulo', type = str) 
-        tipo_evento = request.args.get('tipo_evento' , default = 'nulo', type = str)
-
+        #localidade = request.args.get('localidade', default = 'nulo',  type = str)
+        #genero = request.args.get('genero', default = 'nulo', type = str) 
+        #tipo_evento = request.args.get('tipo_evento' , default = 'nulo', type = str)
+        localidade = "Recife"
+        genero = "jaz"
+        tipo_evento = "Apresentação em Bar"
         if(localidade == 'nulo' or genero == 'nulo' or tipo_evento == 'nulo'):
             return 'bad request', 400
 
