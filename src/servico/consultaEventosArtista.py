@@ -7,7 +7,9 @@ def listaEventosArtistas(id_Artista):
     ID_artista = id_Artista
     ListaEventos = []  
 
-    df1=pd.read_csv('src\servico\Base_Eventos.csv')
+    url = 'https://raw.githubusercontent.com/arthurpiratas/apiRecomendacaoGigB/master/src/servico/Base_Eventos.csv'
+
+    df1=pd.read_csv(url, sep = ',', )
     EventosAtivos = df1.copy().loc[df1['status'] != 'cancelado']
     EventosAtivos = EventosAtivos.copy().loc[EventosAtivos['status'] != 'concluido']
     EventosMusico = EventosAtivos.copy().loc[EventosAtivos['ID_Artista'] == ID_artista]
