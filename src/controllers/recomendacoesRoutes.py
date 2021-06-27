@@ -1,10 +1,13 @@
 from flask import Flask, jsonify, request
 from flask_restplus import Api, Resource
+from flask_cors import CORS
 #from pandas.io import api
 
 from src.server.instance import server
 
 app, api = server.app, server.api
+
+CORS(app)
 
 from src.servico.recomendacao import recomendacaoDemo
 from src.servico.consultaEventosArtista import listaEventosArtistas

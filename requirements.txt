@@ -6,3 +6,4 @@ MarkupSafe==1.1.1
 Werkzeug==0.16.0
 pandas==1.2.4
 flask_restplus==0.13.0
+Flask-CORS==3.0.10
