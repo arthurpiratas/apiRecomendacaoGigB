@@ -7,18 +7,17 @@ from src.server.instance import server
 app, api = server.app, server.api
 
 from src.servico.recomendacao import recomendacaoDemo
+from src.servico.consultaEventosArtista import listaEventosArtistas
 
 @api.route('/recoDemo', methods=['GET', 'POST'])
 class recoDemo(Resource):
     def get(self, ):
-        # http://localhost:5000/recoDemo?localidade=Recife&genero=jaz&tipo_evento=Apresentação em Bar
         localidade = request.args.get('localidade', default = 'nulo',  type = str)
         genero = request.args.get('genero', default = 'nulo', type = str) 
         tipo_evento = request.args.get('tipo_evento' , default = 'nulo', type = str)
         if(localidade == 'nulo' or genero == 'nulo' or tipo_evento == 'nulo'):
             return 'bad request', 400
 
-        #return geraResponse(200, "Sucesso","Bandas", recomendacaoDemo(localidade, genero, tipo_evento)) 
         return recomendacaoDemo(localidade, genero, tipo_evento), 200 
     
     def post(self, ):
@@ -31,6 +30,17 @@ class recoDemo(Resource):
         tipo_evento = response["tipo_evento"]
 
         return geraResponse(200, "Sucesso", "Bandas", recomendacaoDemo(localidade, genero, tipo_evento)) 
+
+@api.route('/ListaEventos', methods=['GET'])
+class listarEventos(Resource):
+    def get(self, ):
+        id_artista = request.args.get('Id_artista', default = 'nulo',  type = int)
+        if(id_artista == 'nulo'):
+            return 'bad request', 400
+
+        return listaEventosArtistas(id_artista), 200 
+    
+    
 
 
 
